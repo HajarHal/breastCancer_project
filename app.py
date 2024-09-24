@@ -10,9 +10,10 @@ def get_categories_and_graphs(cancer_type, category_type):
         for filename in os.listdir(folder_path):
             if filename.endswith('.html'):
                 # Clean up the filename to display as a proper name in the frontend
-                graph_name = filename.replace(f'{category_type}_{cancer_type}_', '').replace('_', ' ').replace('.html', '')
+                graph_name = filename.replace(f'{category_type}_{cancer_type}_', '').replace('.html', '').replace('_', ' ')
                 graphs.append((graph_name, filename))  # Keep both clean name and actual filename
     return graphs
+
 
 # Homepage route
 @app.route('/')
